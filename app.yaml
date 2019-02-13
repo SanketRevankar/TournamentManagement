@@ -1,0 +1,22 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /lib
+  static_dir: lib
+
+- url: /resources/images/
+  static_dir: resources/images
+
+# Serve php scripts
+- url: /(.+\.php)$
+  script: \1
+
+- url: /.*
+  script: welcome.php
